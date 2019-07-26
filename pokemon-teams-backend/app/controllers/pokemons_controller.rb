@@ -9,12 +9,18 @@ class PokemonsController < ApplicationController
     end
 
     def create
-        @pokemon = Pokemon.new(pokemon_params)
+        @trainer = Trainer.find(params[:trainer_id])
         
-        if @pokemon.save
-            render json: @pokemon, status: :created, location: @pokemon
+        if @trainer.pokemons.length < 6
+            @pokemon = Pokemon.new(pokemon_params)
+            
+            if @pokemon.save
+                render json: @pokemon, status: :created, location: @pokemon
+            else
+                render json: @pokemon.errors, status: :unprocessable_entity
+            end
         else
-            render json: @pokemon.errors, status: :unprocessable_entity
+            render json: {error: "You can't carry any more Pokemon!"}, status: :unprocessable_entity
         end
     end
 
