@@ -4,14 +4,16 @@ body {
   }
   
   header {
-    background-color: #4caf50;
+    background-color: royalblue;
     margin: 0 auto;
     height: 50px;
+    color: #fff
   }
   
   header h2 {
     padding: 10px;
     margin: 0;
+    font-family: Helvetica;
   }
   
   main {
@@ -42,18 +44,21 @@ body {
     font-size: 1.05em;
     list-style: none;
     padding-right: 20px;
+    font-family: Helvetica;
   }
   
   button {
     font-size: .65em;
     color: #fff;
-    background-color: green;
+    background-color: royalblue;
     border-radius: 10px;
+    font-family: Helvetica;
   }
   
   button.release {
     float: right;
-    background-color: #E1332D;
+    background-color: purple;
+    font-family: Helvetica;
   }
   
   @media only screen and (min-width: 500px) {
